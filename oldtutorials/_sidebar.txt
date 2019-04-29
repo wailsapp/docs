@@ -1,0 +1,24 @@
+<!-- docs/_sidebar.md -->
+
+* [Back](/?id=wails)
+* [Tutorials](tutorials/README.md)
+<!--
+* [Basic](tutorials/01%20-%20Basic.md)
+* [Basic Custom](tutorials/02%20-%20Basic%20Custom.md)
+* [Custom HTML](tutorials/03%20-%20Custom%20HTML.md)
+* [Binding Functions](tutorials/04%20-%20Binding%20Functions.md)
+* [Binding Structs](tutorials/05%20-%20Binding%20Structs.md)
+* [Events 1](tutorials/06%20-%20Events%201.md)
+* [Events 2](tutorials/07%20-%20Events%202.md)
+* [Events 3](tutorials/08%20-%20Events%203.md)
+* [Events 4](tutorials/09%20-%20Events%204.md)
+* [Error Handling](tutorials/10%20-%20Error%20Handling.md)
+* [Logging](tutorials/11%20-%20Logging.md)
+* [Custom Logging](tutorials/12%20-%20Custom%20Logging.md)
+* [Assets](tutorials/13%20-%20Assets.md)
+* [Dialog - Select File](tutorials/14%20-%20Dialog%20-%20Select%20File.md)
+* [Dialog - Select Directory](tutorials/15%20-%20Dialog%20-%20Select%20Directory.md)
+* [Dialog - Save File](tutorials/16%20-%20Dialog%20-%20Save%20File.md)
+* [Window - Colour](tutorials/17%20-%20Window%20-%20Colour.md)
+* [Window - Control](tutorials/18%20-%20Window%20-%20Control.md)
+-->
