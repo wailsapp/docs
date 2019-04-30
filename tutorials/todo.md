@@ -4,8 +4,11 @@ In this tutorial, we will be creating a todo app based on the [Vue MVC Todo App]
 
   * Accessing the Wails runtime in both Javascript and Go
   * Using native browser file dialogs
+  * Using the unified events system
   * Binding both functions and structs to the application
   * Basic usage of Vue 
+
+The source code to the app is available [here](https://github.com/wailsapp/todo). I highly recommend not looking at it unless you really need to.
 
 ## Setup
 
