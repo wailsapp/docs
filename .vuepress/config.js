@@ -6,6 +6,7 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
+  ga: 'UA-139310949-1',
   themeConfig: {
     sidebar: {
       "/": ["home", "quick_start", "/reference/", "/tutorials/", "project_status"]
@@ -22,7 +23,6 @@ module.exports = {
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
     // editLinkText: 'Help us improve this page!',
-    nav: [{ text: "Home", link: "/" }, { text: "Twitter", link: "https://twitter.com/wailsapp" }, { text: "Slack", link: "https://wails.slack.com" }],
-    ga: 'UA-139310949-1'
+    nav: [{ text: "Home", link: "/" }, { text: "Twitter", link: "https://twitter.com/wailsapp" }, { text: "Slack", link: "https://wails.slack.com" }]
   }
 };
