@@ -2,5 +2,8 @@
   "scripts": {
     "docs:dev": "vuepress dev",
     "docs:build": "vuepress build"
+  },
+  "devDependencies": {
+    "vuepress-plugin-minimal-analytics": "^0.1.4"
   }
 }

@@ -83,6 +83,9 @@ module.exports = {
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
     // editLinkText: 'Help us improve this page!',
-    nav: [{ text: "Home", link: "/" }, { text: "Twitter", link: "https://twitter.com/wailsapp" }, { text: "Slack", link: "https://wails.slack.com" }]
+    nav: [{ text: "Home", link: "/" }, { text: "Twitter", link: "https://twitter.com/wailsapp" }, { text: "Slack", link: "https://wails.slack.com" }],
+    plugins: [
+      ['minimal-analytics', { ga: 'UA-139310949-1' }]
+    ]
   }
 };
