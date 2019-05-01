@@ -98,10 +98,10 @@ Now that we have access to our Quotes struct, let's add more quotes.
 A quote traditionally has a text and an author. Currently we are returning a single string from our `GetQuote` method, but it would be better to return a struct. Let's define it:
 
 ```go
-// Quote holds a single quote and the person who said it
+// Quote holds a single quote and the author who said it
 type Quote struct {
 	Text   string `json:"text"`
-	Person string `json:"person"`
+	Author string `json:"author"`
 }
 ```
 
