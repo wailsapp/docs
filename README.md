@@ -8,7 +8,7 @@ actionLink: /home
 pageClass: homepage-class
 features:
   - title: Your Backend is Go
-    details: Write standard Go code, like you always have. If you have an existing Go application, it's easy to put an HMTL frontend on it.
+    details: Write standard Go code, like you always have. If you have an existing Go application, it's easy to put an HTML frontend on it.
   - title: Your Frontend is Anything
     details: Use any frontend technologies you like and call your Go code from Javascript.
   - title: Your App is Awesome
