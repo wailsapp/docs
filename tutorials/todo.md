@@ -841,7 +841,7 @@ Now that we have a basic todo app, let's build it into a desktop app by running 
 
 The problem we now have is that every time we start the app, we lose our previous list. Let's look at using Go to persist our list.
 
-## Persistance using Go
+## Persistence using Go
 
 Currently, our app is completely standalone from the backend. Our main app is simply wrapping the Vue project and displaying it. What we want to do is load our list up from disk when we start our app. To do that, we must be able to bridge our frontend and backend code. We do this using the Wails Bridge.
 
@@ -1088,7 +1088,7 @@ This is what is in our file (even if it is a blank list)! Last thing for us to d
 
 Now every time we reload the page, the todo list is loaded! We can also see the list data that was sent from the backend to the frontend on the console. 
 
-If your editor/IDE has aotumatic file reload, then open the `mylist.json` file and watch how it gets updated when you add or remove items. It's saved in a compact form which is sometimes hard to read so lets format the data saved slightly. We used `JSON.stringify` to turn the todo list into a string and it has an option to "pretty print", so let's change that in `App.vue`:
+If your editor/IDE has automatic file reload, then open the `mylist.json` file and watch how it gets updated when you add or remove items. It's saved in a compact form which is sometimes hard to read so lets format the data saved slightly. We used `JSON.stringify` to turn the todo list into a string and it has an option to "pretty print", so let's change that in `App.vue`:
 
 ```javascript {3}
   watch: {
@@ -1349,7 +1349,7 @@ If you call it with `false`, you will see this instead:
   <img src="/media/todopromises2.png" style="width: 75%;">
 </div> 
 
-So now you can treat your backend code like any modern Javascript ascync function. Neat huh? 
+So now you can treat your backend code like any modern Javascript async function. Neat huh? 
 
 Of course, sending errors back from the backend is optional - Wails will map what it is given and if there's no error, then the promise will only resolve, not reject.
 
@@ -1683,7 +1683,7 @@ Now lets update `SaveList`:
 ```
 Once we save this, we should see that the app works as expected. Add a couple of todos and check `mylist.json`. You will see it's getting updated correctly.
 
-You're probably wondering why go to the effort of using a struct if the funtionality is the same? That's a good question and there's a number of reasons including separation of concerns, modularisation, it's common practice in Go... but the main reason, is that it allows you to gain access to the Wails runtime in Go, and this provides some cool things which we are about to use...
+You're probably wondering why go to the effort of using a struct if the functionality is the same? That's a good question and there's a number of reasons including separation of concerns, modularisation, it's common practice in Go... but the main reason, is that it allows you to gain access to the Wails runtime in Go, and this provides some cool things which we are about to use...
 
 ## Wails Runtime in Go
 
@@ -1810,7 +1810,7 @@ We will demonstrate this by allowing the backend to send an error message, and t
 This function will set the `errorMessage` property to the given message and then hide it after 3 seconds. This is the same code that we use when handling the JSON parse error. Save the file and open up the browser console. Let's test this code by using the Javascript Wails Runtime to emit the event. Type:
 
 ```javascript
-window.wails.events.emit("error", "I am a message from Javacript!")
+window.wails.events.emit("error", "I am a message from Javascript!")
 ```
 You should see the error message pop up for 3 seconds then disappear.
 
