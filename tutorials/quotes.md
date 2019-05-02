@@ -175,7 +175,7 @@ Next, we'll update the template to use the quote object:
 </template>
 ``` 
 
-Let's look at Line 3. We are using a blokquote element to encapsulate the quote. Within this element, we are using the `v-if` Vue directive. This will conditionally render the element based on the condition given to it. In our case, this is `quote != nil`. We will define `quote` in the component. This will be what stores our quote struct from the backend. The next directive we use is `:cite`. This simply sets an attribute on the blockquote element. In our case, we are setting it to `quote.author`. This references the author field of the quote struct we are getting from the backend. Within the element tags, we are using a template directive. This will output text based on the data within the double braces. In our case this will be `quote.text`.
+Let's look at Line 3. We are using a blockquote element to encapsulate the quote. Within this element, we are using the `v-if` Vue directive. This will conditionally render the element based on the condition given to it. In our case, this is `quote != nil`. We will define `quote` in the component. This will be what stores our quote struct from the backend. The next directive we use is `:cite`. This simply sets an attribute on the blockquote element. In our case, we are setting it to `quote.author`. This references the author field of the quote struct we are getting from the backend. Within the element tags, we are using a template directive. This will output text based on the data within the double braces. In our case this will be `quote.text`.
 
 In Line 4, we simply update the name of the component's method to call when the button is clicked.
 
@@ -446,7 +446,7 @@ Due to the nature of Windows, a standard build will also package the app with th
 
 ### Linux
 
-Curently, packing on Linux isn't supported as it could mean many things. There is the potential to support snap packages in the future.
+Currently, packing on Linux isn't supported as it could mean many things. There is the potential to support snap packages in the future.
 
 ## Exercises
 
