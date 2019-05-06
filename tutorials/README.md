@@ -24,7 +24,7 @@ This is a comprehensive and advanced tutorial that only requires a basic knowled
 
 ## CPU Usage App
 
-In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a CPU Usage app with wails:
+In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a CPU Usage app with Wails. He covers struct binding, the events system and how to use 3rd party Javascript packages in your app. It's a really great tutorial!
 <br/><br/>
 
 <div class="videocontainer">
@@ -34,3 +34,7 @@ In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a
     allowfullscreen>
   </iframe>
 </div>
+
+<br/>
+
+The tutorial is also available in text format at Package Main's [episode 16 github repo](https://github.com/plutov/packagemain/tree/master/16-wails-desktop-app).
