@@ -21,3 +21,16 @@ What's a framework without a Todo app? We revisit the classic app, basing it on 
 This is a comprehensive and advanced tutorial that only requires a basic knowledge of Javascript and Go. It covers all aspects of Wails and is recommended for people of all skill levels.
 
 [Start the tutorial](./todo.md)
+
+## CPU Usage App
+
+In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a CPU Usage app with wails:
+<br/><br/>
+
+<div class="videocontainer">
+  <iframe width="1280" height="720"
+    src="https://www.youtube.com/embed/Dg9rUXxNV-c?ecver=1" frameborder="0"
+    allow="encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
