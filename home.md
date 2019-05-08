@@ -21,7 +21,7 @@ The traditional method of providing web interfaces to Go programs is via a built
 
 Wails uses cgo to bind to the native rendering engines so a number of platform dependent libraries are needed as well as an installation of Go. The basic requirements are:
 
-- Go 1.12 or above. Go 1.11 should work if go modules are enabled: GO111MODULE=on.
+- Go 1.12 or above. Go 1.11 should work. Ensure go modules are enabled: GO111MODULE=on.
 - npm
 
 ### MacOS
