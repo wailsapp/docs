@@ -2,6 +2,10 @@
 
 This project is currently in BETA. 
 
+Mac builds currently working.
+Linux builds currently working.
+Windows builds currently NOT working. Fix in progress.
+
 This means that in general it works, and there are a few things that are keeping it from becoming a v1 release. Any help with these issues would be greatly appreciated:
 
   - The project has been mostly developed on Mac, with a lesser amount of testing done on Window and Linux. Feedback from users of these platforms will be invaluable.
