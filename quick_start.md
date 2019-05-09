@@ -75,6 +75,6 @@ If you make changes to the frontend or backend, you simply have to run `wails bu
 
 ## Next Steps
 
-If you would like to get stuck into making an app right away, we suggest you take a look at the [tutorials](./tutorials/).
+If you would like to start into making an app right away, we suggest you take a look at the [tutorials](./tutorials/).
 
 If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the [reference](./reference/) section. 
