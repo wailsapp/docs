@@ -57,9 +57,9 @@ func main() {
 	app.Run()
 }
 ```
-Here is a quick explaination of how this works:
+Here is a quick explanation of how this works:
 
-| Lines    | Explaination                                                   | 
+| Lines    | Explanation                                                    | 
 | -------- | -------------------------------------------------------------- | 
 | 1        | The standard package directive.                                |
 | 3-6      | Imports the Wails framework and the Mewn utility package that we will use for handling assets.                                                            |
