@@ -21,7 +21,7 @@ The traditional method of providing web interfaces to Go programs is via a built
 
 Wails uses cgo to bind to the native rendering engines so a number of platform dependent libraries are needed as well as an installation of Go. The basic requirements are:
 
-- Go 1.12 or above. Go 1.11 should work. Ensure Go modules are enabled: GO111MODULE=on.
+- Go 1.12 or above. Go 1.11 should work. Ensure Go modules are enabled: GO111MODULE=on and go/bin is in your PATH variable.
 - npm
 
 ### MacOS
@@ -32,7 +32,7 @@ Make sure you have the xcode command line tools installed. This can be done by r
 
 ### Linux
 
-#### Ubuntu 18.04
+#### Ubuntu 18.04, Ubuntu 19.04, and Pop!_OS 19.04 Tested
 
 `sudo apt install pkg-config build-essential libgtk-3-dev libwebkit2gtk-4.0-dev`
 
