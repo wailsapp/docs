@@ -32,13 +32,17 @@ Make sure you have the xcode command line tools installed. This can be done by r
 
 ### Linux
 
-#### Ubuntu 18.04, Ubuntu 19.04, and Pop!_OS 19.04 Tested
+#### Ubuntu 18.04/19.04, Pop!_OS 19.04
 
 `sudo apt install pkg-config build-essential libgtk-3-dev libwebkit2gtk-4.0-dev`
 
 #### Arch Linux
 
 `sudo pacman -S webkit2gtk gtk3`
+
+### Red Hat Based Distros
+
+`sudo yum install webkit2gtk-devel gtk3-devel`
 
 ::: tip
 If you have successfully installed these dependencies on a different flavour of Linux, please consider clicking the "Edit this page" link at the bottom and submit a PR.
