@@ -86,13 +86,15 @@ Here is a list of all available flags:
 | -d   | Build application in Debug mode              |
 | -p   | Package application after a successful build |
 
-The `-p` flag is currently supports OSX and Windows. On OSX, it bundles your binary into a .app file with the default icon. On Windows, the bundling of resources into the app is on by default. When the `-p` flag is used on Windows, the resource files are left available for editing. Any changes will be picked up by the next build (eg icon).
+The `-p` flag is currently supports OSX and Windows. On OSX, it bundles your binary into a .app file with the default icon. On Windows, it will generate the application resource files and compile it all into a '.exe'. When the `-p` flag is used, the packaging files are left available for editing. Any changes will be picked up by the next build (eg icon).
 
 ## Update
 
 > wails update
 
-This command does a check to see if the current version is the latest. If not, it will download and install the latest version. It is a convenience wrapper around `go get`.
+This command does a check to see if the current version is the latest. If not, it will download and install the latest version. It is possible to also use it to install 'prerelease' versions by using the `-pre` flag. If a specific version is required, then it supports a `-version` flag.
+
+Example: `wails update -pre` will update the latest prerelease version
 
 ## Issue
 
