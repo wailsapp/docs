@@ -40,7 +40,7 @@ Make sure you have the xcode command line tools installed. This can be done by r
 
 `sudo pacman -S webkit2gtk gtk3`
 
-### Red Hat Based Distros
+#### Red Hat Based Distros
 
 `sudo yum install webkit2gtk-devel gtk3-devel`
 
