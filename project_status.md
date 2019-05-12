@@ -4,7 +4,7 @@ This project is currently in BETA.
 
 Mac builds currently working.
 Linux builds currently working.
-Windows builds currently working.
+Windows builds currently working as of v0.14.0. Update using `wails update`.
 
 This means that in general it works, and there are a few things that are keeping it from becoming a v1 release. Any help with these issues would be greatly appreciated:
 
