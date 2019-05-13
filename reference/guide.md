@@ -128,7 +128,7 @@ As you can see, there is an additional section describing the frontend project. 
 | install  | The command to execute to install the frontend dependencies |
 | build    | The command to execute to build the frontend project. In this example, this will simply run the build script defined in the frontend's package.json file |
 | bridge   | The directory where the Wails bridge script resides |
-| serve    | The command to serve your application in 'headless' mode (more on this later) |
+| serve    | The command to serve your application in 'bridge' mode (more on this later) |
 
 Under normal circumstances, you will not need to edit these values. They are provided to allow flexibility to template designers.
 
