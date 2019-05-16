@@ -46,7 +46,7 @@ This template consists of a frontend composed of Vue components, bundled togethe
 
 > wails serve
 
-When you run `wails serve`, it will compile up the backend and run in headless mode and run it. This allows you to develop the frontend using your standard tooling. When you run your app, it will connect to the backend at startup and make all your backend functions available to you.
+When you run `wails serve`, it will compile up the backend and run it in headless mode. This allows you to develop the frontend using your standard tooling. When you run your app, it will connect to the backend at startup and make all your backend functions available to you.
 
 We will cover this more in the tutorial.
 
