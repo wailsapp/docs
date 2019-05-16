@@ -18,7 +18,7 @@ The setup command does a number of things - it asks you for your name and email 
 
 Setup is also the default command so it can be invoked by simply running `wails`.
 
-<div class="videocontainer">
+<div class="videocontainer" style="width:727;height:454;">
 <video width="727" height="454" controls>
   <source src="/media/setup.mp4" type="video/mp4">
   Your browser does not support the video tag.
@@ -35,7 +35,7 @@ The init command builds out a new project based on a template of your choice. Cu
 
 This template consists of a frontend composed of Vue components, bundled together using Webpack. It makes a simple call to the backend.
 
-<div class="videocontainer">
+<div class="videocontainer" style="width:727;height:454;">
 <video width="727" height="454" controls>
   <source src="/media/init.mp4" type="video/mp4">
   Your browser does not support the video tag.
@@ -50,7 +50,7 @@ When you run `wails serve`, it will compile up the backend and run in headless m
 
 We will cover this more in the tutorial.
 
-<div class="videocontainer">
+<div class="videocontainer" style="width:835;height:454;">
 <video width="835" height="454" controls>
   <source src="/media/serve.mp4" type="video/mp4">
   Your browser does not support the video tag.
@@ -69,7 +69,7 @@ The build command is the Wails equivalent of `go build`, however it does a numbe
 - It downloads any Go dependencies that are required
 - It finally compiles and bundles everything into a single binary
 
-<div class="videocontainer">
+<div class="videocontainer" style="width:727;height:454;">
 <video width="727" height="454" controls>
   <source src="/media/build.mp4" type="video/mp4">
   Your browser does not support the video tag.
