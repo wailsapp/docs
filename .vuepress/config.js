@@ -9,7 +9,7 @@ module.exports = {
   ga: 'UA-139310949-1',
   themeConfig: {
     sidebar: {
-      "/": ["home", "quick_start", "/reference/", "/tutorials/", "project_status"]
+      "/": ["home", "quick_start", "/reference/", "/tutorials/", "/development/", "project_status"]
     },
     repo: "wailsapp/wails",
     // repoLabel: 'Contribute!',
