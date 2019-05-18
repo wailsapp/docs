@@ -21,7 +21,7 @@ The traditional method of providing web interfaces to Go programs is via a built
 
 Wails uses cgo to bind to the native rendering engines so a number of platform dependent libraries are needed as well as an installation of Go. The basic requirements are:
 
-- Go 1.12 or above. Go 1.11 should work. Ensure Go modules are enabled: GO111MODULE=on and go/bin is in your PATH variable.
+- Go 1.12 or above, however Go 1.11 should work. 
 - npm
 
 ### MacOS
@@ -56,8 +56,14 @@ Windows requires gcc and related tooling. The recommended download is from [http
 
 ## Installation
 
+::: tip
+Ensure Go modules are enabled: GO111MODULE=on and go/bin is in your PATH variable.
+:::
+
 Installation is as simple as running the following command:
 
 <pre style='color:white'>
 go get github.com/wailsapp/wails/cmd/wails
 </pre>
+
+Once installed, the `wails update` command may be used for subsequent updates.
