@@ -36,7 +36,7 @@ Make sure you have the xcode command line tools installed. This can be done by r
 
 `sudo apt install pkg-config build-essential libgtk-3-dev libwebkit2gtk-4.0-dev`
 
-#### Arch Linux
+#### Arch / Manjaro Linux
 
 `sudo pacman -S webkit2gtk gtk3`
 
