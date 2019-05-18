@@ -2,17 +2,18 @@
 
 In this section we cover all aspects of Wails development and contribution guidelines.
 
+## Background
+
+Historically, Wails development has been quite ad-hoc. The aim of this proposal is to create a simple workflow for contributing to the project. It is meant as a starting point and any improvements to this process are welcome (please open a ticket!).
+
 ## Issue Driven Development
 
-If there is something to add to the code, whether a bug or enhancement, open a ticket so that it can be discussed. If the coding goes ahead, create a new branch off `develop` and reference the ticket ID, eg:
+If there is something to add to the code, whether a bug or enhancement, a ticket should be opened so that it can be discussed. If the coding goes ahead, a new branch should be created from the `develop` branch with a reference to the ticket ID, eg:
   `64 - Support react`
 
 Commit messages should follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary) format:
 
-  * fix: message 
-  * feat: message
-  * docs: message
-  * BREAKING CHANGE: message
+  * tag[(scope)]: message 
 
 | Tag             | Meaning              |
 | --------------- | -------------------- | 
@@ -20,6 +21,12 @@ Commit messages should follow the [conventional commits](https://www.conventiona
 | feat            | New Feature          | 
 | docs            | Documentation update |
 | BREAKING CHANGE | API Change           |
+
+Examples:
+
+  * fix: this is a fix for the project as a whole
+  * fix(cli): this is a fix for the cli
+  * docs: updated the contributors 
 
 ## Branch Workflow
 
