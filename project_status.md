@@ -26,7 +26,7 @@ The focus at the moment is very much on ironing out bugs and getting to v1.0. Af
 
   * Support other UI Frameworks
 
-    Currently, Wails only supports Vue projects, however there is no real reason it couldn't support other frameworks. It would be good (and relatively easy) to create Project Templates to support React, Preact, Angular, etc.
+    Currently, Wails supports Vue, Vuetify and React projects, however there is no real reason it couldn't support other frameworks. It would be good (and relatively easy) to create Project Templates to support Preact, Angular, etc.
 
   * Create more examples
 
