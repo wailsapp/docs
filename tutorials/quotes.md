@@ -1,6 +1,6 @@
 # Quotes Generator
 
-In this tutorial, we will be building on the default Vue template to create a quotes generator. We shall cover how we can group methods into a struct in Go and how to use the Go runtime object. 
+In this tutorial, we will be building on the default Vue/Webpack template to create a quotes generator. We shall cover how we can group methods into a struct in Go and how to use the Go runtime object. 
 
 It is assumed you have completed and understood the [template tutorial](./template.md). We will continue from where we left off.
 

@@ -27,11 +27,11 @@ You initialise a new project by running the `wails init` command. This asks you 
   - The name of the binary to compile to
   - The name of the directory to create the project in
 
-Currently, there is only one project template: Vue/Webpack. This consists of a frontend composed of Vue components, bundled together with Webpack.
+Currently, there are 3 frontend tempaltes: Vue/Webpack, Vuetify and React. 
 
 ### Anatomy of a project
 
-In this section, we'll look at what makes up a project. 
+In this section, we'll look at what makes up a project. We will focus on the Vue/Webpack template.
 
 #### Vue/Webpack Template
 

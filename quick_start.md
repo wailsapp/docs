@@ -22,7 +22,7 @@ These are compiled and bundled together using the `wails build` command. This wi
 
 ## Frontend
 
-The frontend is a standard Vue project that gets compiled down to Javascript and CSS bundles. It lives in the `frontend` directory of the project. There is nothing particularly special about the project other than it is configured to bundle the whole project down to 2 bundles: app.js and app.css.
+The frontend is a standard Vue/React project that gets compiled down to Javascript and CSS bundles. It lives in the `frontend` directory of the project. There is nothing particularly special about the project other than it is configured to bundle the whole project down to 2 bundles: app.js and app.css.
 
 ## Backend
 
