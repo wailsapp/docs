@@ -1,5 +1,4 @@
 # TODO
 
-* Roadmap
-* Redo github page
-* Remove id="app" in template
+* Contribution guide
+* Showcase

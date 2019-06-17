@@ -29,11 +29,19 @@ Setup is also the default command so it can be invoked by simply running `wails`
 
 > wails init
 
-The init command builds out a new project based on a template of your choice. Currently, the only choice is a Vue template.
+The init command builds out a new project based on a template of your choice. We curently support a basic Vue, Vuetify and React templates. The project will be built automatically after initialisation.
 
-### Vue/Webpack
+### Basic Vue
 
 This template consists of a frontend composed of Vue components, bundled together using Webpack. It makes a simple call to the backend.
+
+### Vuetify
+
+This template consists of a frontend composed of Vuetify components, bundled together using Webpack. It makes a simple call to the backend.
+
+### React
+
+This template consists of a frontend composed of React components, bundled together using Webpack. It makes a simple call to the backend.
 
 <div class="videocontainer">
 <video width="727" height="454" controls>
@@ -51,7 +59,7 @@ When you run `wails serve`, it will compile up the backend and run it in headles
 We will cover this more in the tutorial.
 
 <div class="videocontainer">
-<video width="835" height="454" controls>
+<video width="727" height="390" controls>
   <source src="/media/serve.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video> 

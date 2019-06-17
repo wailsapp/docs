@@ -27,7 +27,7 @@ This is a comprehensive and advanced tutorial that only requires a basic knowled
 In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a CPU Usage app with Wails. He covers struct binding, the events system and how to use 3rd party Javascript packages in your app. It's a really great tutorial!
 <br/><br/>
 
-<div class="videocontainer">
+<div class="videocontainer" style="width:725px; height:410px">
   <iframe width="1280" height="720"
     src="https://www.youtube.com/embed/Dg9rUXxNV-c?ecver=1" frameborder="0"
     allow="encrypted-media"
