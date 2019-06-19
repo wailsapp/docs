@@ -579,8 +579,19 @@ The browser subsystem provides methods to interact with the system browser.
 Opens the given URL in the system browser.
 
 ```go
-runtime.Browser.OpenURL("https://wails.app")
+Browser.OpenURL("https://wails.app")
 ```
+
+#### OpenFile
+
+> OpenFile(filepath string)
+
+Opens the given Filename in the system browser. On OSX, this is the equivalent of the `open` system command.
+
+```go
+Browser.OpenFile("/tmp/lol.mp4")
+```
+
 ### A Common Pattern
 
 A common pattern for the Runtime is to simply save it as part of the struct and use it when needed:
