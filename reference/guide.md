@@ -327,13 +327,27 @@ A very important detail to consider is that all calls to bound Go code are run i
 
 ## Wails Runtime
 
-When binding a struct with the `WailsInit` method, a runtime object is presented by the Application. This has a number of subsystems which we will now look at in detail.
+Wails comes with a runtime library that may be accessed from Javascript or Go. It has the following subsystems:
+
+  * Events
+  * Logging
+  * Window
+  * Dialog
+  * Browser
+
+**NOTE: At this time, the Javascript runtime does not include the Window and Dialog subsystems**
+
+When binding a struct with the `WailsInit` method, the Go runtime object is presented by the Application. 
+
+For the frontend, the runtime is accessed through the `window.wails` object.
+
+**NOTE: We are looking to unify the API between the runtimes. This is currently being tracked in [this ticket](https://github.com/wailsapp/wails/issues/123)**
 
 ### Events
 
 The Events subsystem provides a means of listening and emitting events across the application as a whole. This means that you can listen for events emitted in both Javascript and Go, and events that you emit will be received by listeners in both Go and Javascript. 
 
-It is accessible via `runtime.Events` and provides 2 methods: `Emit` and `On`.
+In the Go runtime, it is accessible via `runtime.Events` and provides 2 methods: `Emit` and `On`. 
 
 #### Emit
 
@@ -554,6 +568,19 @@ Closes the main window and thus terminates the application. Use with care!
   runtime.Window.Close() 
 ```
 
+### Browser
+
+The browser subsystem provides methods to interact with the system browser.
+
+#### OpenURL
+
+> OpenURL(url string)
+
+Opens the given URL in the system browser.
+
+```go
+runtime.Browser.OpenURL("https://wails.app")
+```
 ### A Common Pattern
 
 A common pattern for the Runtime is to simply save it as part of the struct and use it when needed:
