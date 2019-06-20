@@ -128,11 +128,34 @@ Once reconnected, open the console again and re-issue the `GetQuote` command. Yo
 
 Now that we have the data in a format we can manipulate, we can update our frontend code to use it.
 
-### Styling the Quotes
+### Rendering the Quotes
 
 Let's create a new component for rendering the quotes. It will be based on our HelloWorld component, so make a copy of this file and name it `Quote.vue`.
 
-The first thing we will do is update the component to get and store our quote:
+The first thing we will do is register our new Quote component in `App.vue`:
+
+```javascript
+<template>
+  <div id="app">
+    <img alt="Wails logo" src="./assets/images/logo.png" class="logo zoomIn">
+    <Quote />
+  </div>
+</template>
+
+<script>
+import Quote from "./components/Quote.vue";
+import "./assets/css/main.css";
+
+export default {
+  name: "app",
+  components: {
+    Quote
+  }
+};
+</script>
+```
+
+Then we will update the component to get and store our quote:
 
 ```javascript
 <script>
@@ -305,7 +328,7 @@ We will also create a small function to create and store our quotes:
 // AddQuote creates a Quote object with the given inputs and
 // adds it to the Quotes collection
 func (q *Quotes) AddQuote(text, author string) {
-	q.quotes = append(Q.quotes, &Quote{Text: text, Author: author})
+	q.quotes = append(q.quotes, &Quote{Text: text, Author: author})
 }
 ```
 
