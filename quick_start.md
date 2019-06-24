@@ -1,3 +1,8 @@
+---
+sidebar: on
+sidebarDepth: 2
+---
+
 # Quick Start
 
 ## High Level Overview

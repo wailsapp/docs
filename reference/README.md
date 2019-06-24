@@ -1,8 +1,13 @@
+---
+sidebar: on
+sidebarDepth: 2
+---
+
 # Reference
 
 ## API
 
-## Binding
+### Binding
 
 Having just a web frontend means nothing unless you can interact with the system. Wails enables this through 'binding' - making Go code callable from the frontend. There are 2 types of code you can bind to the frontend: Functions and Struct Methods. When they are bound, they may be used in the frontend.
 
@@ -448,13 +453,13 @@ Wails comes with a CLI tool that allows you to generate, build and bundle your p
 
 It has a number of commands:
 
-## Help
+### Help
 
 > wails --help
 
 This will output the cli help message with all the available commands and flags.
 
-## Setup
+### Setup
 
 > wails setup
 
@@ -469,21 +474,21 @@ Setup is also the default command so it can be invoked by simply running `wails`
 </video>
 </div>
 
-## Init
+### Init
 
 > wails init
 
 The init command builds out a new project based on a template of your choice. We curently support a basic Vue, Vuetify and React templates. The project will be built automatically after initialisation.
 
-### Basic Vue
+#### Basic Vue
 
 This template consists of a frontend composed of Vue components, bundled together using Webpack. It makes a simple call to the backend.
 
-### Vuetify
+#### Vuetify
 
 This template consists of a frontend composed of Vuetify components, bundled together using Webpack. It makes a simple call to the backend.
 
-### React
+#### React
 
 This template consists of a frontend composed of React components, bundled together using Webpack. It makes a simple call to the backend.
 
@@ -494,7 +499,7 @@ This template consists of a frontend composed of React components, bundled toget
 </video>
 </div>
 
-## Serve
+### Serve
 
 > wails serve
 
@@ -509,7 +514,7 @@ We will cover this more in the tutorial.
 </video>
 </div>
 
-## Build
+### Build
 
 > wails build
 
@@ -540,7 +545,7 @@ Here is a list of all available flags:
 
 The `-p` flag is currently supports OSX and Windows. On OSX, it bundles your binary into a .app file with the default icon. On Windows, it will generate the application resource files and compile it all into a '.exe'. When the `-p` flag is used, the packaging files are left available for editing. Any changes will be picked up by the next build (eg icon).
 
-## Update
+### Update
 
 > wails update
 
@@ -548,7 +553,7 @@ This command does a check to see if the current version is the latest. If not, i
 
 Example: `wails update -pre` will update the latest prerelease version
 
-## Issue
+### Issue
 
 > wails issue
 
@@ -566,7 +571,7 @@ Wails then determines some environmental details such as it's own version, opens
 
 Please note: you can edit the template as you feel fit before submitting.
 
-## Tooling
+### Tooling
 
 The Wails cli has developer tooling built in, but needs activating. To create a developer version, do the following:
 
@@ -577,7 +582,7 @@ go install --tags=dev
 
 This unlocks a `wails dev` command that has subcommands for development.
 
-### Creating new project templates
+#### Creating new project templates
 
 With a developer enabled cli, you can run `wails dev newtemplate` to create a new project template. You will be asked a number of questions regarding your template and as a result, a new directory will be created in `<project-root>/cmd/templates`.
 

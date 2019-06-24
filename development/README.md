@@ -1,3 +1,8 @@
+---
+sidebar: on
+sidebarDepth: 2
+---
+
 # Development
 
 In this section we cover all aspects of Wails development and contribution guidelines.

@@ -1,8 +1,11 @@
+---
+sidebarDepth: 2
+---
 # Tutorials
 
 ## Template Overview
 
-In this tutorial we go through the default Vue template to gain an understanding of how Wails works. It is a simple introduction to some of the core concepts of the framework. 
+In this tutorial we go through the default Vue template to gain an understanding of how Wails works. It is a simple introduction to some of the core concepts of the framework.
 
 [Start the tutorial](./template.md)
 

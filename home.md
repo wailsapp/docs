@@ -1,3 +1,8 @@
+---
+sidebar: on
+sidebarDepth: 2
+---
+
 # Wails
 
 > A framework for building desktop applications using Go & Web Technologies.
