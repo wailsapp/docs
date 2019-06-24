@@ -23,6 +23,6 @@ module.exports = {
     editLinks: true,
     // custom text for edit link. Defaults to "Edit this page"
     // editLinkText: 'Help us improve this page!',
-    nav: [{ text: "Home", link: "/" }, { text: "Twitter", link: "https://twitter.com/wailsapp" }, { text: "Slack", link: "https://gophers.slack.com/messages/CJ4P9F7MZ/" }, { text: "Slack Invite", link: "https://invite.slack.golangbridge.org/" }]
+    nav: [{ text: "Wails", link: "/home.html#wails" }, { text: "Quick Start", link: "/quick_start" }, { text: "Reference", link: "/reference/" },{ text: "Tutorials", link: "/tutorials/" },{ text: "Development", link: "/development/" },{ text: "Project Status", link: "/project_status" }, { text: "Twitter", link: "https://twitter.com/wailsapp" }, { text: "Slack", link: "https://gophers.slack.com/messages/CJ4P9F7MZ/" }, { text: "Slack Invite", link: "https://invite.slack.golangbridge.org/" }]
   }
 };

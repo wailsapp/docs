@@ -75,6 +75,8 @@ Wails uses cgo to bind to the native rendering engines so a number of platform d
 - Go 1.12 or above
 - npm
 
+Run `go version && npm --version` to verify.
+
 ### MacOS
 
 Make sure you have the xcode command line tools installed. This can be done by running:
@@ -83,7 +85,7 @@ Make sure you have the xcode command line tools installed. This can be done by r
 
 ### Linux
 
-#### Ubuntu 18.04/19.04, Pop!OS 19.04
+#### Debian/Ubuntu 18.04/19.04, Pop!OS 19.04
 
 `sudo apt install pkg-config build-essential libgtk-3-dev libwebkit2gtk-4.0-dev`
 
@@ -107,9 +109,17 @@ Windows requires gcc and related tooling. The recommended download is from [http
 
 ## Installation
 
-::: tip
-Ensure Go modules are enabled: GO111MODULE=on and go/bin is in your PATH variable.
-:::
+### Preparation
+
+Ensure Go modules are enabled:
+
+`export GO111MODULE=on`
+
+and go/bin is in your PATH variable:
+
+`echo $PATH | grep go/bin`
+
+### Install
 
 Installation is as simple as running the following command:
 
@@ -117,22 +127,55 @@ Installation is as simple as running the following command:
 go get github.com/wailsapp/wails/cmd/wails
 </pre>
 
+::: tip
 Once installed, the `wails update` command may be used for subsequent updates.
+:::
 
+### Setup
 
-To get up and running quickly, do the following:
+To finish the installation setup your Wails system by running the [setup command](./reference/#setup) `wails setup` and filling your handle and email.
 
-1. Setup your Wails system by running the [setup command](./reference/cli.md#setup) `wails setup`.
-2. Generate a new project using the [init command](./reference/cli.md#init) `wails init`. Select the default options.
-3. Change into the project directory (cd my-project) and compile your application using the [build command](./reference/cli.md#build) `wails build`.
-4. If all went well, you should have a compiled program in your local directory. Run it with `./my-project` or double click `myproject.exe` if on windows.
+## Generate new project
+
+Generate a new project using the [init command](./reference/#init) `wails init`.
+
+Select the default options.
+
+## Build
+
+Change into the project directory `cd my-project` and compile your application using the [build command](./reference/#build) `wails build`.
+
+If all went well, you should have a compiled program in your local directory. Run it with `./my-project` or double click `myproject.exe` if on windows.
 
 <div class="imagecontainer">
-<img src="/media/app.png" style="width:75%">
+<img src="/media/app.png" style="width:65%">
 </div>
+
+## Binding
+
+## Events
+
+## Serve
+
+### `wails serve`
+
+While developing your apps using wails the preferred method is by the [serve command](./reference/#serve) `wails serve`.
+
+::: tip
+This produces a much **faster** lightweight build in _debug_ mode, excluding `npm` build scripts, saving time when developing the backend and also enabling use of `npm run serve` for partial browser development of frontend!
+:::
+
+### `npm run serve`
+
+Change into the frontend directory `cd my-project/frontend` and serve your GUI using `npm run serve`.
 
 ## Next Steps
 
-If you would like to start into making an app right away, we suggest you take a look at the [tutorials](./tutorials/).
+If you would like to start making an app right away, we suggest you explore `wails` via our _awesome_ [tutorials](./tutorials/).
+If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the
+[concepts](./home.html#concepts) section.
+Finally if you are advanced user and would like to get right in to it head over to the [API reference](./reference/#api) & [Cli reference](./reference/#cli) sections.
 
-If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the [reference](./reference/) section.
+::: tip
+Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel. [_Invite_](https://invite.slack.golangbridge.org) For support or just to say hi!
+:::

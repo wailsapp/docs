@@ -1,5 +1,6 @@
 <template>
   <aside class="sidebar">
+  <img src='/media/logo.png' style='display: block; margin: 0 auto; width:70%'></img>
     <NavLinks/>
     <slot name="top"/>
     <SidebarLinks :depth="0" :items="items"/>

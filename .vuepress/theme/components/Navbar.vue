@@ -18,6 +18,7 @@
         v-if="$siteTitle"
         :class="{ 'can-hide': $site.themeConfig.logo }"
       >{{ $siteTitle }}</span>
+      <Badge text="beta" type="warn"/>
     </router-link>
 
     <div
@@ -87,7 +88,7 @@ function css (el, property) {
 
 <style lang="stylus">
 $navbar-vertical-padding = 0.7rem
-$navbar-horizontal-padding = 1.5rem
+$navbar-horizontal-padding = 1rem
 
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding

@@ -13,7 +13,8 @@
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
 
-      <p
+<div id="outer">
+      <div id="inner"
         class="action"
         v-if="data.actionText && data.actionLink"
       >
@@ -21,7 +22,19 @@
           class="action-button"
           :item="actionLink"
         />
-      </p>
+      </div>
+
+      <div id="inner"
+        class="action"
+        v-if="data.actionTextTwo && data.actionLinkTwo"
+      >
+        <NavLink
+          class="action-button"
+          :item="actionLinkTwo"
+        />
+      </div>
+      </div>
+
     </header>
 
     <div
@@ -63,7 +76,14 @@ export default {
     actionLink () {
       return {
         link: this.data.actionLink,
-        text: this.data.actionText
+        text: this.data.actionText,
+      }
+    },
+
+    actionLinkTwo () {
+      return {
+        link: this.data.actionLinkTwo,
+        text: this.data.actionTextTwo
       }
     }
   }
