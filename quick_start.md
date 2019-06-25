@@ -153,6 +153,8 @@ If all went well, you should have a compiled program in your local directory. Ru
 
 ## Binding
 
+
+
 ## Events
 
 ## Serve
@@ -171,7 +173,7 @@ Change into the frontend directory `cd my-project/frontend` and serve your GUI u
 
 ## Next Steps
 
-If you would like to start making an app right away, we suggest you explore `wails` via our _awesome_ [tutorials](./tutorials/).
+If you would like to start making an app right away, we suggest you explore Wails via our _awesome_ [tutorials](./tutorials/).
 If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the
 [concepts](./home.html#concepts) section.
 Finally if you are advanced user and would like to get right in to it head over to the [API reference](./reference/#api) & [Cli reference](./reference/#cli) sections.
