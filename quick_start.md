@@ -151,12 +151,6 @@ If all went well, you should have a compiled program in your local directory. Ru
 <img src="/media/app.png" style="width:65%">
 </div>
 
-## Adding a new element
-
-### Binding
-
-### Runtime
-
 ### Serve
 
 #### `wails serve`

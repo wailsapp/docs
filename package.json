@@ -8,6 +8,7 @@
   },
   "scripts": {
     "docs:build": "npx vuepress build",
+    "docs:dev": "npx vuepress dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
