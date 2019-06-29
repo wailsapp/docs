@@ -32,27 +32,34 @@ To get started, let's run through the setup procedure.
 
 Wails has been designed to be make the gap between web technologies and Go as minimal as possible. The frontend is a [Webview][1] component, and you may develop your frontend code using any common Javascript framework you like, and seemlessly interact with your Go code from it. This is done through a shared IPC mechanism.
 
-![Overview](/media/Overview.svg)
+<p align="center" style="text-align: center">
+   <img src="/media/Overview.svg" width="33%"><br/>
+</p>
 
 ### IPC Overview
 
 The IPC mechanism operates across 2 runtimes - one in Javascript and the other in Go. They both provide a simple interface, removing the burdon from the developer from needing to deal with the IPC mechanism directly.
 
-![Runtimes](/media/IPC.svg)
-
+<p align="center" style="text-align: center">
+   <img src="/media/IPC.svg" width="33%"><br/>
+</p>
 
 
 The runtimes share common components which the developer can interact with: Binding and Events.
 
-![IPCDetail](/media/IPCDetail.svg)
+<p align="center" style="text-align: center">
+   <img src="/media/IPCDetail.svg" width="33%"><br/>
+</p>
+
 
 ### Binding
 
 A Wails application provides a single method that allows you to expose (bind) your Go code to the frontend. Using this method, you may bind an arbitrary function or a struct with exposed methods. At startup, Wails will analyse bound functions/methods and automatically provide the equivalent functions in Javascript. This allows you to call your bound Go code directly from Javascript.
 
 
-
-![Binding](/media/Binding.svg)
+<p align="center" style="text-align: center">
+   <img src="/media/Binding.svg" width="40%"><br/>
+</p>
 
 The Javascript wrapper functions deal with all of the complexity of calling the Go code. You simply call the function in Javascript and receive a promise back.
 The function to bind your Go code deals with all the complexity of binding. If the call to your Go code completes successfully, the result will be passed to the resolve function. If an error is returned, this will be passed to the reject function.
@@ -61,7 +68,9 @@ The function to bind your Go code deals with all the complexity of binding. If t
 
 Wails provides a unified Events system similar to Javascript's native events system. This means that any event that is sent from either Go or Javascript can be picked up by either side. Data may be passed along with any event. This allows you to do neat things like have background processes running in Go and notifying the frontend of any updates.
 
-![Events](/media/Events.svg)
+<p align="center" style="text-align: center">
+   <img src="/media/Events.svg" width="40%"><br/>
+</p>
 
 ---
 [1]: https://github.com/zserge/webview
