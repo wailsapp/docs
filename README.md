@@ -16,5 +16,5 @@ features:
   - title: Your App is Awesome
     details: The Wails tooling generates your projects, builds both your frontend & backend and creates a single binary. Mac, Linux & Windows supported!
 footer: MIT Licensed | Copyright © 2019-present Lea Anthony
-sidebarDepth: 2
+sidebarDepth: 1
 ---

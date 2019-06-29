@@ -1,6 +1,6 @@
 ---
 sidebar: on
-sidebarDepth: 2
+sidebarDepth: 1
 ---
 
 # Reference
