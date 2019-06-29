@@ -3,9 +3,11 @@ home: true
 heroImage: /media/logo.png
 heroText: " "
 tagline: A framework for building desktop apps using Go & Web Technologies
-actionText: Let's Go! →
-actionLink: /home
+actionText: Quick Start! →
+actionLink: /quick_start
 pageClass: homepage-class
+actionTextTwo: Learn More →
+actionLinkTwo: /home
 features:
   - title: Your Backend is Go
     details: Write standard Go code, like you always have. If you have an existing Go application, it's easy to put an HTML frontend on it.

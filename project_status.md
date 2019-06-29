@@ -1,6 +1,11 @@
+---
+sidebar: on
+sidebarDepth: 2
+---
+
 # Project Status
 
-This project is currently in BETA. 
+This project is currently in BETA.
 
 Mac builds currently working.
 Linux builds currently working.
@@ -9,12 +14,12 @@ Windows builds currently working as of v0.14.0. Update using `wails update`.
 This means that in general it works, and there are a few things that are keeping it from becoming a v1 release. Any help with these issues would be greatly appreciated:
 
   - The project has been mostly developed on Mac, with a lesser amount of testing done on Window and Linux. Feedback from users of these platforms will be invaluable.
-  - The docs have taken a long time to write. They need reviewing by fresh eyes. Whilst I've tried to keep the docs cross-platform, there may be areas that are lacking (screenshots!). 
+  - The docs have taken a long time to write. They need reviewing by fresh eyes. Whilst I've tried to keep the docs cross-platform, there may be areas that are lacking (screenshots!).
   - Wails uses an older version of Webview, which uses a deprecated API for windowing on Mac. Attempts to use the newer releases have [not been successful](https://github.com/zserge/webview/issues/236). Any help on this would be appreciated.
 
 In building this project, I have followed the principle of:
 
- * Make it work 
+ * Make it work
  * Make it right
  * Make it fast
 
@@ -38,7 +43,7 @@ The focus at the moment is very much on ironing out bugs and getting to v1.0. Af
 
   * Support for Desktop Elements
 
-    There is currently no support for Menus, Tray, Notifications or any other native desktop elements. Initially, I thought that might be best served by the rendering target but perhaps it would be possible to support at the application layer. 
+    There is currently no support for Menus, Tray, Notifications or any other native desktop elements. Initially, I thought that might be best served by the rendering target but perhaps it would be possible to support at the application layer.
 
   * Cross-Compilation
 
@@ -51,4 +56,3 @@ The focus at the moment is very much on ironing out bugs and getting to v1.0. Af
   * VSCode Extension
 
     It would be great to be able to have auto-complete of your bound methods whilst writing your frontend code. This would be a good solution as well as offering the usual helpers such as project creation, building, etc.
-    
