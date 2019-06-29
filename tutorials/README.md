@@ -37,4 +37,4 @@ In Package Main Episode 16, [Alex Pliutau](https://twitter.com/pliutau) builds a
 
 <br/>
 
-The tutorial is also available in text format at Package Main's [episode 16 github repo](https://github.com/plutov/packagemain/tree/master/16-wails-desktop-app).
+The tutorial is also available in text format at Package Main's [episode 16 github repo](https://github.com/plutov/packagemain/tree/master/16-wails-desktop-app) or as a [Medium article](https://medium.com/js-dojo/building-a-desktop-app-in-go-using-wails-b7f5825f986a).
