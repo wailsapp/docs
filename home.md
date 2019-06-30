@@ -38,7 +38,7 @@ Wails has been designed to be make the gap between web technologies and Go as mi
 
 ### IPC Overview
 
-The IPC mechanism operates across 2 runtimes - one in Javascript and the other in Go. They both provide a simple interface, removing the burdon from the developer from needing to deal with the IPC mechanism directly.
+The IPC mechanism operates across 2 runtimes - one in Javascript and the other in Go. They both provide a simple interface, removing the burden from the developer from needing to deal with the IPC mechanism directly.
 
 <p align="center" style="text-align: center">
    <img src="/media/IPC.svg" width="33%"><br/>
