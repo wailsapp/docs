@@ -1,3 +1,8 @@
+---
+sidebar: on
+sidebarDepth: 1
+---
+
 # Development
 
 In this section we cover all aspects of Wails development and contribution guidelines.
@@ -13,12 +18,12 @@ If there is something to add to the code, whether a bug or enhancement, a ticket
 
 Commit messages should follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary) format:
 
-  * tag[(scope)]: message 
+  * tag[(scope)]: message
 
 | Tag             | Meaning              |
-| --------------- | -------------------- | 
-| fix             | Bugfix               | 
-| feat            | New Feature          | 
+| --------------- | -------------------- |
+| fix             | Bugfix               |
+| feat            | New Feature          |
 | docs            | Documentation update |
 | BREAKING CHANGE | API Change           |
 
@@ -26,7 +31,7 @@ Examples:
 
   * fix: this is a fix for the project as a whole
   * fix(cli): this is a fix for the cli
-  * docs: updated the contributors 
+  * docs: updated the contributors
 
 ## Branch Workflow
 
@@ -50,6 +55,7 @@ Example:
 <div class="imagecontainer" style="width:80%; margin: auto; margin-top: 30px">
   <img src="/media/develbranch.png">
 </div>
+
 
 ## Tooling
 
@@ -102,5 +108,3 @@ This generates the following `template.json`:
 ```
 
 *Note: The `wailsdir` key is currently unused but will be used in place of bridge in the [near future](https://github.com/wailsapp/wails/issues/88)*
-
-You now have a good basis for your template. Running `wails init` will now give you your template as an option to install. When the project is generated using the template, it will create directories, copy non-template files then copy template files. Template files end in .template and will be treated as standard Go templates in which embedded codes are substituted with values in the [Project Options](https://github.com/wailsapp/wails/blob/master/cmd/project.go#L139-L154).
