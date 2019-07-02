@@ -5,11 +5,7 @@ sidebarDepth: 1
 
 # Project Status
 
-This project is currently in BETA.
-
-Mac builds currently working.
-Linux builds currently working.
-Windows builds currently working as of v0.14.0. Update using `wails update`.
+**This project is currently in BETA.**
 
 This means that in general it works, and there are a few things that are keeping it from becoming a v1 release. Any help with these issues would be greatly appreciated:
 
@@ -25,13 +21,25 @@ In building this project, I have followed the principle of:
 
 It is currently at stage 1. The project has been through a fair number of rewrites and refactors and as such, there will be areas that need attention. I'm hoping with the help of the community we can get to at least stage 2.
 
+## Template Support
+
+The current status of template/Platform support is as follows:
+
+|  Template  |   Mac   |   Linux   |   Windows       |
+| ---------- | ------- | --------- | --------------- |
+| Vue Basic  | Working |  Working  |   Working       |
+| Vuetify    | Working |  Working  |   Working       |
+| React      | Working |  Working  |   [Not Working](https://github.com/wailsapp/wails/issues/145)   |
+| Angular    | Working |  Working  |   [Not Working](https://github.com/wailsapp/wails/issues/146)   |
+
+
 ## Roadmap
 
 The focus at the moment is very much on ironing out bugs and getting to v1.0. After that, there's a few avenues I'd like to explore:
 
   * Support other UI Frameworks
 
-    Currently, Wails supports Vue, Vuetify and React projects, however there is no real reason it couldn't support other frameworks. It would be good (and relatively easy) to create Project Templates to support Preact, Angular, etc.
+    Currently, Wails supports Vue, Vuetify, React and Angular projects, however there is no real reason it couldn't support other frameworks. It would be good (and relatively easy) to create Project Templates to support Preact, Svelte, etc.
 
   * Create more examples
 
