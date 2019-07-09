@@ -21,6 +21,22 @@ In building this project, I have followed the principle of:
 
 It is currently at stage 1. The project has been through a fair number of rewrites and refactors and as such, there will be areas that need attention. I'm hoping with the help of the community we can get to at least stage 2.
 
+## Platform Support
+
+These are the current tested platforms. If you have Wails working on a platform not specified here, please consider making a PR.
+
+* MacOS 10.14
+* Windows 10
+* Linux
+  * RedHat
+  * Centos
+  * Ubuntu 18.04, 19.04
+  * Debian 9, 10
+  * Gentoo
+  * Arch
+  * Manjaro
+  * Zorin
+
 ## Template Support
 
 The current status of template/Platform support is as follows:
