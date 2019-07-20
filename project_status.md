@@ -45,7 +45,7 @@ The current status of template/Platform support is as follows:
 | ---------- | ------- | --------- | --------------- |
 | Vue Basic  | Working |  Working  |   Working       |
 | Vuetify    | Working |  Working  |   Working       |
-| React      | Working |  Working  |   [Not Working](https://github.com/wailsapp/wails/issues/145)   |
+| React      | Working |  Working  |   Working       |
 | Angular    | Working |  Working  |   [Not Working](https://github.com/wailsapp/wails/issues/146)   |
 
 
