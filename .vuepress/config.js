@@ -6,7 +6,14 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  ga: 'UA-139310949-1',
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-139310949-1'
+      }
+    ]
+  ],
   themeConfig: {
     sidebar: {
       "/": ["home", "quick_start", "/reference/", "/tutorials/", "/development/", "/releases/", "project_status"]

@@ -13,13 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bh90210/docs.git"
+    "url": "git+https://github.com/wailsapp/docs.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bh90210/docs/issues"
+    "url": "https://github.com/wailsapp/docs/issues"
   },
-  "homepage": "https://github.com/bh90210/docs#readme"
+  "homepage": "https://github.com/wailsapp/docs#readme",
+  "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.0.0-rc.1"
+  }
 }
