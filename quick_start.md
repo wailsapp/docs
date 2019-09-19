@@ -85,17 +85,41 @@ Make sure you have the xcode command line tools installed. This can be done by r
 
 ### Linux
 
-#### Debian/Ubuntu 18.04/19.04, Pop!OS 19.04
+#### Debian/Ubuntu
 
-`sudo apt install pkg-config build-essential libgtk-3-dev libwebkit2gtk-4.0-dev`
+`sudo apt install libgtk-3-dev libwebkit2gtk-4.0-dev`
 
-#### Arch / Manjaro Linux
+_Debian: 8, 9, 10_
+
+_Ubuntu: 16.04, 18.04, 19.04_
+
+_Also succesfully tested on: Zorin 15, Parrot 4.7, Linuxmint 19, Elementary 5, Kali, Neon_
+
+#### Arch Linux
 
 `sudo pacman -S webkit2gtk gtk3`
 
-#### Red Hat Based Distros
+_Also succesfully test on: ArcoLinuxB_
 
-`sudo yum install webkit2gtk-devel gtk3-devel`
+#### Centos
+
+`sudo yum install webkitgtk3-devel gtk3-devel`
+
+_CentOS 6, 7_
+
+#### Fedora
+
+`sudo yum install webkit2gtk3-devel gtk3-devel`
+
+_Fedora 29, 30_
+
+#### VoidLinux & VoidLinux-musl
+
+`xbps-install gtk+3-devel webkit2gtk-devel`
+
+#### Gentoo
+
+`sudo emerge gtk+:3 webkit-gtk`
 
 ::: tip
 If you have successfully installed these dependencies on a different flavour of Linux, please consider clicking the "Edit this page" link at the bottom and submit a PR.
@@ -174,5 +198,7 @@ If you would prefer to get to know the framework a little better before building
 Finally if you are advanced user and would like to get right in to it head over to the [API reference](./reference/#api) & [Cli reference](./reference/#cli) sections.
 
 ::: tip
-Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel. [_Invite_](https://invite.slack.golangbridge.org) For support or just to say hi!
+Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel. 
+[_Invite_](https://invite.slack.golangbridge.org) 
+For support or just to say hi!
 :::
