@@ -31,9 +31,10 @@ These are the current tested platforms. If you have Wails working on a platform 
   * RedHat
   * Centos
   * Ubuntu 18.04, 19.04
+  * Pop!_OS 19.04
   * Debian 9, 10
   * Gentoo
-  * Arch
+  * Arch / Manjaro
   * Manjaro
   * Zorin
 
