@@ -21,20 +21,20 @@ The output binary name (todos):
 Output binary Name: todos
 Project directory name (todos): 
 Project Directory: todos
-Project 'todos' generated in directory 'todos'!
-To compile the project, run 'wails build' in the project directory.
+Template: Vue2/Webpack Basic 
+Project 'todos' built in directory 'todos'!
 ```
 
-Next we will move into the `todos` directory and run `wails build` to initialise the project and make sure everything generated correctly.
-
-If all went well you should see something like:
+Next we will move into the `todos` directory. You should see the following files, including a todos binary:
 
 ```bash
-✓ Installing frontend dependencies (This may take a while)...
-✓ Building frontend...
-✓ Installing Dependencies...
-✓ Packing + Compiling project...
-Awesome! Project 'todos' built!
+.
+├── frontend
+├── go.mod
+├── go.sum
+├── main.go
+├── project.json
+└── todos
 ```
 
 Now lets build our frontend!
@@ -153,7 +153,7 @@ export default {
 
 The template has 2 sections: the header where the title is displayed (Lines 4-7) and the main todo list (Lines 8-16). 
 
-So let's now start serving the front end so we can see what it looks like. As we haven't written our backend yet, let's temporarily comment out the Wails bridge parts of `frontend/src/main.js`:
+So let's now start serving the front end so we can see what it looks like. As we haven't written our backend yet, let's temporarily comment out the Wails runtime parts of `frontend/src/main.js`:
 
 ```javascript
 import Vue from "vue";
@@ -162,9 +162,9 @@ import App from "./App.vue";
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
 
-// import Bridge from "./wailsbridge";
+// import Wails from '@wailsapp/runtime';
 
-// Bridge.Start(() => {
+//Wails.Init((() => {
   new Vue({
     render: h => h(App)
   }).$mount("#app");
@@ -274,7 +274,7 @@ Let's add a test entry into the main list:
 
 In vue, we can iterate over a list using [v-for](https://vuejs.org/v2/guide/list.html#v-for-on-a-lt-template-gt) and we will use that to display our list items:
 
-```html {3}
+```html {3-7}
       <section class="main" v-show="todos.length">
         <ul class="todo-list">
           <li class="todo" v-for="todo in todos" :key="todo.id">
@@ -864,9 +864,9 @@ import App from "./App.vue";
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
 
-import Bridge from "./wailsbridge";
+import Wails from "@wailsapp/runtime";
 
-Bridge.Start(() => {
+Wails.Init(() => {
   new Vue({
     render: h => h(App)
   }).$mount("#app");
@@ -903,19 +903,47 @@ Our todo store in the frontend is just an array with a number of javascript obje
   },
   watch: {
     todos: function(todos) {
-      window.wails.log.info("Todo list: " + JSON.stringify(todos));
+      console.log("Todo list: " + JSON.stringify(todos));
     }
   },
   methods: {
     addTodo: function() {
 ```
 
-Whilst we could just log to the browser console, instead, we will take our first step into using the Wails runtime. It is accessible through `window.wails` and has some features that help with building your application:
+Now when we update the list, the list is printed to the console. 
+
+Instead of just logging to the browser console, we will take our first step into using the Wails runtime from Javascript. It is accessible through the [@wailsapp/runtime](https://www.npmjs.com/package/@wailsapp/runtime) package and has some features that help with building your application:
 
   * Logging
   * Events
+  * Browser
 
- In this example, we will use the logger to log an info line containing the current todo list. This log will be visible in the terminal serving the backend.
+  To use the Runtime, we need to import it:
+
+```javascript{5}
+<script>
+import "./assets/css/base.css";
+import "./assets/css/app.css";
+
+import Wails from '@wailsapp/runtime';
+
+export default {
+```
+
+ Now, we will use the runtime logger to log an info line containing the current todo list. This log will be visible in the terminal serving the backend.
+
+ ```javascript {4-8}
+      todos: []
+    }
+  },
+  watch: {
+    todos: function(todos) {
+      Wails.Log.Info("Todo list: " + JSON.stringify(todos));
+    }
+  },
+  methods: {
+    addTodo: function() {
+```
 
 If you now add a todo item, you should see something like this in your console:
 
@@ -935,7 +963,7 @@ Removing items also works:
   <img src="/media/wailsbridgelogging3.png" style="width: 95%;">
 </div> 
 
-Now we can easily write a function to save the todo list in Go. Initially, we will do this through a simple function in `main.go` (Also remove the existing `basic` function):
+Now we can easily write a function to save the todo list in Go. Initially, we will do this through a simple function in `main.go` (Also, let's remove the existing `basic` function):
 
 ```go {3-10}
 )
@@ -1032,7 +1060,7 @@ To call this from the frontend when the component is ready, we use the [mounted]
   },
   mounted() {
     window.backend.loadList().then((list) => {
-      window.wails.log.info("I got this list: " + list)
+      Wails.Log.Info("I got this list: " + list)
     });
   }
 };
@@ -1080,7 +1108,7 @@ This is what is in our file (even if it is a blank list)! Last thing for us to d
 ```javascript
   mounted() {
     window.backend.loadList().then((list) => {
-      window.wails.log.info("I got this list: " + list)
+      Wails.Log.Info("I got this list: " + list)
       this.todos = JSON.parse(list);
     });
   }
@@ -1134,7 +1162,7 @@ To demonstrate an error in the frontend, let's look at this piece of code:
 ```javascript
   mounted() {
     window.backend.loadList().then(list => {
-      window.wails.log.info("I got this list: " + list);
+      Wails.Log.Info("I got this list: " + list);
       this.todos = JSON.parse(list);
     });
   }
@@ -1162,7 +1190,7 @@ The standard way to catch [errors](https://developer.mozilla.org/en-US/docs/Web/
       try {
         this.todos = JSON.parse(list);
       } catch (e) {
-        window.wails.log.info("An error was thrown: " + e.message);
+        Wails.Log.Info("An error was thrown: " + e.message);
       }
     });
   }
@@ -1797,7 +1825,7 @@ We will demonstrate this by allowing the backend to send an error message, and t
 
 ```javascript{2-7}
   mounted() {
-    window.wails.events.on("error", message => {
+    Wails.Events.On("error", message => {
       this.errorMessage = message;
       setTimeout(() => {
         this.errorMessage = "";
@@ -1810,7 +1838,7 @@ We will demonstrate this by allowing the backend to send an error message, and t
 This function will set the `errorMessage` property to the given message and then hide it after 3 seconds. This is the same code that we use when handling the JSON parse error. Save the file and open up the browser console. Let's test this code by using the Javascript Wails Runtime to emit the event. Type:
 
 ```javascript
-window.wails.events.emit("error", "I am a message from Javascript!")
+window.wails.Events.Emit("error", "I am a message from Javascript!")
 ```
 You should see the error message pop up for 3 seconds then disappear.
 
@@ -1852,7 +1880,7 @@ Now let's update our event handler in `App.vue` to process the number:
 
 ```javascript {2-4}
   mounted() {
-    window.wails.events.on("error", (message, number) => {
+    Wails.Events.On("error", (message, number) => {
       let result = number * 2;
       this.errorMessage = `${message}: ${result}`;
       setTimeout(() => {
@@ -1976,13 +2004,13 @@ Now let's get the frontend to listen for the event. Let's edit `App.vue`:
 
 ```javascript {2-7}
   mounted() {
-    window.wails.events.on("filemodified", () => {
+    Wails.Events.On("filemodified", () => {
       this.errorMessage = "File Modified";
       setTimeout(() => {
         this.errorMessage = "";
       }, 3000);
     });
-    window.wails.events.on("error", (message, number) => {
+    Wails.Events.On("error", (message, number) => {
       let result = number * 2;
       this.errorMessage = `${message}: ${result}`;
 ```
@@ -2013,11 +2041,11 @@ Now we can simplify our `mounted` method:
 
 ```javascript {2-21}
   mounted() {
-    window.wails.events.on("filemodified", () => {
+    Wails.Events.On("filemodified", () => {
       this.setErrorMessage("File Modified");
     });
 
-    window.wails.events.on("error", (message, number) => {
+    Wails.Events.On("error", (message, number) => {
       let result = number * 2;
       this.setErrorMessage(`${message}: ${result}`);
     });
@@ -2065,11 +2093,11 @@ We now call this method from `mounted`:
 
 ```javascript {11-12}
   mounted() {
-    window.wails.events.on("filemodified", () => {
+    Wails.Events.On("filemodified", () => {
       this.setErrorMessage("File Modified");
     });
 
-    window.wails.events.on("error", (message, number) => {
+    Wails.Events.On("error", (message, number) => {
       let result = number * 2;
       this.setErrorMessage(`${message}: ${result}`);
     });
@@ -2137,11 +2165,11 @@ Now the final part is to call loadList when the file has been updated:
 
 ```javascript {3}
   mounted() {
-    window.wails.events.on("filemodified", () => {
+    Wails.Events.On("filemodified", () => {
       this.loadList();
     });
 
-    window.wails.events.on("error", (message, number) => {
+    Wails.Events.On("error", (message, number) => {
 ```
 
 Now if you edit your JSON list outside the app, it gets reflected in realtime in the app!

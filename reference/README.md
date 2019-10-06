@@ -187,9 +187,12 @@ Wails comes with a runtime library that may be accessed from Javascript or Go. I
 
 When binding a struct with the `WailsInit` method, the Go runtime object is presented by the Application.
 
-For the frontend, the runtime is accessed through the `window.wails` object.
+For the frontend, the runtime is accessed through the `@wailsapp/runtime` module:
 
-**NOTE: We are looking to unify the API between the runtimes. This is currently being tracked in [this ticket](https://github.com/wailsapp/wails/issues/123)**
+```javascript
+import runtime from '@wailsapp/runtime';
+``` 
+
 
 ### Events
 

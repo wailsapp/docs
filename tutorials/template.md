@@ -85,7 +85,7 @@ When you pressed the button, the frontend code called a backend function and pri
 
 The sequence of operations are as follows:
 
-  * main.js runs and waits for a connection to the backend
+  * main.js runs and waits for the runtime to Initialise. As this is running in bridged mode, it waits until a connection to the backend is established
   * Once established, it mounts the main app, defined in App.vue, just as you normally would in a Vue app
   * App.vue uses a component called "HelloWorld", defined in the components directory and this defines a message and a button. When the button is pressed, a call is made to the backend basic() function and the result is placed in the message
 
@@ -93,14 +93,12 @@ There is no more to the app than this. Let's look at those steps:
 
 ### Waiting for the Backend Connection
 
-The connection to the backend is managed by a bridge, defined in wailsbridge.js. This library does a lot of things, however we only need to be concerned with one function: Start().
-
-The Start() function accepts a callback, which is invoked when the connection to the backend is established. This is demonstrated clearly in main.js:
+When running `wails serve`, the connection to the backend is managed by a bridge which is dynamically injected into the runtime library. This library does a lot of things, however we only need to be concerned with one function: Init(). The Init() function accepts a callback, which is invoked when the connection to the backend is established. This is demonstrated clearly in main.js:
 
 ```javascript
-import Bridge from "./wailsbridge";
+import Wails from '@wailsapp/runtime';
 
-Bridge.Start(() => {
+Wails.Init(() => {
   ...
   ...
   ...
@@ -109,17 +107,17 @@ Bridge.Start(() => {
 
 The bridge sets up the following things:
 
-  * The wails javascript runtime, available at `window.wails`. This provides a number of useful systems that we will cover over the course of the tutorials. For now, we will not use it.
+  * The wails javascript runtime, available at through the `@wailsapp/runtime` module. This provides a number of useful systems that we will cover over the course of the tutorials. For now, we will not use it.
   * The bindings to backend code. These are available at `window.backend`. If you have bound the Go function `Hello` to your application, it will be available at `window.backend.Hello`. 
 
-When the bridge has started, it will call the given callback. At this point you know that both the bindings and the runtime is available.
+When the bridge has initialised, it will call the given callback. At this point you know that both the bindings and the runtime is available.
 
 ### Mount the main application
 
-When the callback from Start is invoked, we create and mount the main Vue App Component:
+When the callback from Init is invoked, we create and mount the main Vue App Component:
 
 ```javascript
-Bridge.Start(() => {
+Wails.Init(() => {
   new Vue({
     render: h => h(App)
   }).$mount("#app");
