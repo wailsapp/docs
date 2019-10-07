@@ -62,7 +62,7 @@ Here is a quick explanation of how this works:
 | 14       | Reads in the frontend javascript bundle as a string.           |
 | 15       | Reads in the frontend css bundle as a string.                  |
 | 17-24    | Creates a new Wails application, specifying width, height, title and a colour for the application window. We also specify the Javascript and CSS we wish the application to render - the JS/CSS we previously read in on lines 14 & 15.              |
-| 25       | Binds our basic function to the application.                   |
+| 25       | Binds our basic function to the application. We can then call this method from Javascript using `window.backend.basic()`.                  |
 | 26       | Runs the application.                                          |
 
 If you make changes to the frontend or backend, you simply have to run `wails build` to regenerate your application.
@@ -99,7 +99,7 @@ _Also succesfully tested on: Zorin 15, Parrot 4.7, Linuxmint 19, Elementary 5, K
 
 `sudo pacman -S webkit2gtk gtk3`
 
-_Also succesfully test on: ArcoLinuxB_
+_Also succesfully test on: ArcoLinuxB, Manjaro_
 
 #### Centos
 
