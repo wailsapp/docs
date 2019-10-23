@@ -225,3 +225,5 @@ The execution workflow of a Wails app is:
   * All WailsInit methods are called with the Go Runtime
   * The application CSS is injected into the frontend
   * Finally, the application Javascript is injected into the frontend
+  * On shutdown ( Ctrl-C, Kill Window or runtime.Window.Close() ), all WailsShutdown methods are called
+  * The applications exits cleanly
