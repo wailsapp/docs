@@ -9,7 +9,7 @@ sidebarDepth: 1
 
 ## 关于
 
-向Go程序提供Web界面的传统方法是通过内置的Web服务器。 Wails提供了一种不同的方法：它提供了将Go代码和Web前端包装到单个二进制文件中的能力。通过处理项目创建，编译和捆绑，Wails cli可以使您轻松实现这一目标。您要做的就是发挥创意！
+向 `Go` 程序提供 `Web` 界面的传统方法是通过内置的 `Web` 服务器。 `Wails` 提供了一种不同的方法：它提供了将 `Go` 代码和 `Web` 前端包装到单个二进制文件中的能力。通过处理项目创建，编译和捆绑， Wails cli可以使您轻松实现这一目标。您要做的就是发挥创意！
 
 ## 功能
 
@@ -24,13 +24,13 @@ sidebarDepth: 1
 
 ## 总览
 
-Wails是一个框架，可帮助使用Go and Web Technologies编写桌面应用程序。对于前端，它使用[Webview] [1]库。反过来，它使用平台的本机渲染引擎（当前用于Linux和Mac的Webkit，用于Windows的MSHTML）。前端使用HTML /Javascript /CSS进行编码，后端是纯Go。通过绑定机制，可以将Go代码作为返回Promise的功能公开给前端。该项目编译为单个可执行文件，将所有资产捆绑到其中。在Windows和MacOS上，可以将二进制文件捆绑到特定于平台的程序包中进行分发。
+`Wails` 是一个框架，可帮助使用 `Go` and `Web Technologies` 编写桌面应用程序。对于前端，它使用[Webview] [1]库。反过来，它使用平台的本机渲染引擎（当前用于 `Linux` 和 `Mac` 的 `Webkit` ，用于 `Windows` 的 `MSHTML` ）。前端使用HTML /Javascript /CSS进行编码，后端是纯 `Go` 。通过绑定机制，可以将Go代码作为返回 `Promise` 的功能公开给前端。该项目编译为单个可执行文件，将所有资产捆绑到其中。在 `Windows` 和 `MacOS` 上，可以将二进制文件捆绑到特定于平台的程序包中进行分发。
 
 首先，让我们完成设置过程。
 
 ## 概念
 
-Wails旨在使Web技术和Go之间的差距尽可能小。前端是[Webview] [1]组件，您可以使用喜欢的任何常见Javascript框架开发前端代码，并与其中的Go代码进行无缝交互。这是通过共享IPC机制完成的。
+`Wails` 旨在使 `Web` 技术和 `Go` 之间的差距尽可能小。前端是[Webview] [1]组件，您可以使用喜欢的任何常见 `Javascript` 框架开发前端代码，并与其中的 `Go` 代码进行无缝交互。这是通过共享 `IPC` 机制完成的。
 
 <p align="center" style="text-align: center">
    <img src="/media/Overview.svg" width="33%"><br/>
@@ -38,7 +38,7 @@ Wails旨在使Web技术和Go之间的差距尽可能小。前端是[Webview] [1]
 
 ### IPC概念
 
-IPC机制可在2个运行时中运行-一个运行在Javascript中，另一个运行在Go中。它们都提供了一个简单的界面，从而减轻了开发人员无需直接处理IPC机制的负担。
+`IPC` 机制可在2个运行时中运行-一个运行在 `J` avascript `中，另一个运行在` Go `中。它们都提供了一个简单的界面，从而减轻了开发人员无需直接处理` IPC`机制的负担。
 
 <p align="center" style="text-align: center">
    <img src="/media/IPC.svg" width="33%"><br/>
@@ -52,18 +52,18 @@ IPC机制可在2个运行时中运行-一个运行在Javascript中，另一个�
 
 ### 绑定
 
-Wails应用程序提供了一种方法，可让您将Go代码公开（绑定）到前端。使用此方法，可以将任意函数或结构与公开的方法绑定。在启动时，Wails将分析绑定的函数/方法并自动以Javascript提供等效的函数。这使您可以直接从Javascript调用绑定的Go代码。
+`Wails` 应用程序提供了一种方法，可让您将 `Go` 代码公开（绑定）到前端。使用此方法，可以将任意函数或结构与公开的方法绑定。在启动时， `Wails` 将分析绑定的函数/方法并自动以 `Javascript` 提供等效的函数。这使您可以直接从 `Javascript` 调用绑定的Go代码。
 
 <p align="center" style="text-align: center">
    <img src="/media/Binding.svg" width="40%"><br/>
 </p>
 
-JavaScript包装函数处理了调用Go代码的所有复杂性。您只需用Javascript调用该函数并收到一个Promise。
-绑定Go代码的功能处理了绑定的所有复杂性。如果对Go代码的调用成功完成，则结果将传递到resolve函数。如果返回错误，则将其传递给拒绝函数。 
+`JavaScript` 包装函数处理了调用 `Go` 代码的所有复杂性。您只需用 `Javascript` 调用该函数并收到一个 `Promise` 。
+绑定 `Go` 代码的功能处理了绑定的所有复杂性。如果对 `Go` 代码的调用成功完成，则结果将传递到 `resolve` 函数。如果返回错误，则将其传递给拒绝函数。 
 
 ### 事件
 
-威尔提供了一个统一的事件系统，类似于Javascript的本地事件系统。这意味着从Go或Javascript发送的任何事件都可以由任何一方接收。数据可以与任何事件一起传递。这使您可以做一些整洁的事情，例如在Go中运行后台进程并通知任何更新的前端。
+威尔提供了一个统一的事件系统，类似于 `Javascript` 的本地事件系统。这意味着从 `Go` 或 `Javascript` 发送的任何事件都可以由任何一方接收。数据可以与任何事件一起传递。这使您可以做一些整洁的事情，例如在Go中运行后台进程并通知任何更新的前端。
 
 <p align="center" style="text-align: center">
    <img src="/media/Events.svg" width="40%"><br/>
@@ -75,31 +75,31 @@ JavaScript包装函数处理了调用Go代码的所有复杂性。您只需用Ja
 ## 步骤
 
 首先，运行 `wails setup` 。这会提示您输入名称和电子邮件，并检查是否已安装依赖项。名称和电子邮件仅用于填写项目模板文件，“仅此而已” *。
-依赖关系会有所不同，具体取决于您使用的是Windows，Linux还是OSX。如果缺少依赖项，它将尝试提供有关如何安装依赖项的帮助。 
+依赖关系会有所不同，具体取决于您使用的是 `Windows` ， `Linux` 还是 `OSX` 。如果缺少依赖项，它将尝试提供有关如何安装依赖项的帮助。 
 
 设置完成后，就该初始化一个新项目了。 
 
 ## 项目
 
-每个Wails应用程序都构建在一个“项目”中。
+每个 `Wails` 应用程序都构建在一个 `Project` 中。
 
 ### 初始化一个项目
 
-您可以通过运行“wails init”命令来初始化一个新项目。这会问您一些问题：
+您可以通过运行 `wails init` 命令来初始化一个新项目。这会问您一些问题：
 
    + 项目名称（用于填写模板）
    + 要编译为的二进制文件的名称
    + 在其中创建项目的目录名称
 
-当前，有3种前端模板：Vue/Webpack，Vuetify和React。
+当前，有3种前端模板： `Vue/Webpack` ， `Vuetify` 和 `React` 。
 
 ### 项目解析
 
-在本节中，我们将研究组成项目的内容。 我们将专注于Vue/Webpack模板。
+在本节中，我们将研究组成项目的内容。 我们将专注于 `Vue/Webpack` 模板。
 
 #### Vue/Webpack 模板
 
-Vue/Webpack模板是一个生成Vuejs项目的项目模板。 它具有以下布局：
+`Vue/Webpack` 模板是一个生成 `Vuejs` 项目的项目模板。 它具有以下布局：
 
 <pre style='color:white'>
 .
@@ -114,7 +114,7 @@ Vue/Webpack模板是一个生成Vuejs项目的项目模板。 它具有以下布
    * main.go 主要应用程序入口
    * project.json 项目元数据
 
-前端目录基本上是一个标准的Vue项目，其布局如下：
+前端目录基本上是一个标准的 `Vue` 项目，其布局如下：
 
 <pre style='color:white'>
 .
@@ -131,7 +131,7 @@ Vue/Webpack模板是一个生成Vuejs项目的项目模板。 它具有以下布
    * src - 前端源代码目录
    * vue.config.js - Vue 配置
 
-src目录具有默认的Vue应用程序，其布局如下：
+`src` 目录具有默认的 `Vue` 应用程序，其布局如下：
 <pre style='color:white'>
 .
 ├── App.vue
@@ -160,9 +160,9 @@ src目录具有默认的Vue应用程序，其布局如下：
    * main.js - 前端项目的入口
    * wailsbridge.js - 前端和Go程序运行的桥梁
 
-该项目分为两部分-后端由根目录中的Go文件组成，而前端则位于“frontend”目录中。前端项目是一个（大多数）标准Vue项目，在vue.config.js中具有一些自定义Webpack设置
+该项目分为两部分-后端由根目录中的Go文件组成，而前端则位于 `frontend` 目录中。前端项目是一个（大多数）标准 `Vue` 项目，在 `vue.config.js` 中具有一些自定义 `Webpack` 设置
 
-由于Vue/Webpack模板中包含完整的前端项目，因此项目元数据包含有关如何安装和构建它的详细信息。这是Vue/Webpack项目的示例project.json文件： 
+由于 `Vue/Webpack` 模板中包含完整的前端项目，因此项目元数据包含有关如何安装和构建它的详细信息。这是 `Vue/Webpack` 项目的示例 `project.json` 文件： 
 
 ``` json
 {
@@ -198,19 +198,19 @@ src目录具有默认的Vue应用程序，其布局如下：
 
 ### 以服务形式启动项目
 
-Wails可以使用您的标准前端工具，但仍然可以调用Go代码。 这是通过以桥接模式“服务”您的后端来完成的。 当您的前端启动时，它将连接到后端，并在后台进行所有绑定。
+`Wails` 可以使用您的标准前端工具，但仍然可以调用 `Go` 代码。 这是通过以桥接模式“服务”您的后端来完成的。 当您的前端启动时，它将连接到后端，并在后台进行所有绑定。
 
-您可以通过在项目目录中运行`wails serve`命令来为后端服务。
+您可以通过在项目目录中运行 `wails serve` 命令来为后端服务。
 
-您现在可以在前端目录中运行`npm run serve'，并使用浏览器和Vue devtools插件开发应用程序。
+您现在可以在前端目录中运行`npm run serve'，并使用浏览器和·Vue devtools·插件开发应用程序。
 
 ### 构建项目
 
-一旦可以将项目构建到单个应用程序中，请在项目目录中运行“ wails build”。 默认情况下，项目以“生产模式”构建。 如果您需要在调试模式下运行应用，请使用'-d'标志进行构建。 以调试模式运行意味着：
+一旦可以将项目构建到单个应用程序中，请在项目目录中运行 `wails build` 。 默认情况下，项目以 `production mode` 构建。 如果您需要在调试模式下运行应用，请使用 `-d` 标志进行构建。 以调试模式运行意味着：
 
-  - 调试消息被打印到终端
-  - 您可以右键单击以在Web视图中检查您的应用程序（MacOS和Linux）
-  - 二进制文件具有许多标志，以帮助开发应用程序。 传递--help标志以查看选项。
+  + 调试消息被打印到终端
+  + 您可以右键单击以在 `Web` 视图中检查您的应用程序（MacOS和Linux）
+  + 二进制文件具有许多标志，以帮助开发应用程序。 传递--help标志以查看选项。
 
 ## 执行流程
 
@@ -226,10 +226,10 @@ Wails应用程序的执行工作流程为：
   + The applications exits cleanly
 
   + 创建应用程序窗口
-  + Wails Javascript运行时已注入前端
-  + Go中绑定的所有功能都在前端设置
-  + 所有WailsInit方法都通过Go Runtime调用
-  + 将应用程序CSS注入前端
-  + 最后，将应用程序Javascript注入到前端
-  + 在关闭时（Ctrl-C，Kill Window或`runtime.Window.Close()`），将调用所有WailsShutdown方法
+  + `Wails Javascript` 运行时已注入前端
+  + `Go` 中绑定的所有功能都在前端设置
+  + 所有 `WailsInit` 方法都通过 `Go Runtime` 调用
+  + 将应用程序 `CSS` 注入前端
+  + 最后，将应用程序 `Javascript` 注入到前端
+  + 在关闭时（Ctrl-C，Kill Window或 `runtime.Window.Close()` ），将调用所有 `WailsShutdown` 方法
   + 应用程序干净退出

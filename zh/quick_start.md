@@ -3,26 +3,26 @@ sidebar: on
 sidebarDepth: 1
 ---
 
-# Quick Start
+# 快速开始
 
-## High Level Overview
+## 概述
 
-Wails applications consist of 2 parts:
+`Wails` 应用包含两个部分:
 
-  * A backend written in Go
-  * A frontend written using standard HTML/JS/CSS
+  + 用 `Go` 编写的后端
+  + 使用标准HTML/JS/CSS编写的前端
 
-These are compiled and bundled together using the `wails build` command. This will firstly build the frontend project into Javascript and CSS bundles. It will then build the main Go application, which bundles the 2 frontend asset files as part of the application. This produces a single application.
+使用 `wails build` 命令将它们编译并绑定在一起。这将首先将 `frontend` 项目构建成 `Javascript` 和 `CSS` 包。然后，它将构建主 `Go` 应用程序，该应用程序将两个前端资产文件作为应用程序的一部分。这将生成一个应用程序。
 
-### Frontend
+### 前端
 
-The frontend is a standard frontend project (Vue, React, etc) that gets compiled down to Javascript and CSS bundles. It lives in the `frontend` directory of the project. There is nothing particularly special about the project other than it is configured to bundle the whole project down to 2 bundles: app.js and app.css.
+`frontend` 是一个标准的前端项目(Vue, React等)，它被编译成 `Javascript` 和 `CSS` 包。它位于项目的 `frontend` 目录中。除了将整个项目配置为两个包: `app.js` 和 `app.css` 之外，这个项目没有什么特别之处。
 
-### Backend
+### 后端
 
-The backend initially comprises of a single main.go file:
+后端最初由单个 `main.go` 组成。文件:
 
-```go
+``` go
 package main
 
 import (
@@ -51,154 +51,142 @@ func main() {
   app.Run()
 }
 ```
-Here is a quick explanation of how this works:
 
-| Lines    | Explanation                                                    |
+以下是有关其工作原理的简要说明：
+
+| 行    | 说明                                                    |
 | -------- | -------------------------------------------------------------- |
-| 1        | The standard package directive.                                |
-| 3-6      | Imports the Wails framework and the Mewn utility package that we will use for handling assets.                                                            |
-| 8-10     | A standard Go function that returns the string "Hello World!". |
-| 12       | The main function declaration.                                 |
-| 14       | Reads in the frontend javascript bundle as a string.           |
-| 15       | Reads in the frontend css bundle as a string.                  |
-| 17-24    | Creates a new Wails application, specifying width, height, title and a colour for the application window. We also specify the Javascript and CSS we wish the application to render - the JS/CSS we previously read in on lines 14 & 15.              |
-| 25       | Binds our basic function to the application. We can then call this method from Javascript using `window.backend.basic()`.                  |
-| 26       | Runs the application.                                          |
+| 1        | 标准包指令|
+| 3-6      | 导入我们将用于处理资产的Wails框架和Mewn实用程序包|
+| 8-10     | 返回字符串 ` Hello World！` 的标准Go函数。 |
+| 12       | 主函数声明|
+| 14       | 以字符串形式读取前端 `javascript` 捆绑包|
+| 15       | 以字符串形式读取前端 `CSS` 捆绑包|
+| 17-24    | 创建一个新的 `Wails` 应用程序，为应用程序窗口指定宽度，高度，标题和颜色。我们还指定了希望应用程序呈现的 `Javascript` 和 `CSS` -先前在第14和15行中阅读的 `JS/CSS` |
+| 25       | 将我们的基本功能绑定到应用程序。然后我们可以使用以下代码从 `Javascript` 调用此方法： `window.backend.basic()` . |
+| 26       | 运行程序|
 
-If you make changes to the frontend or backend, you simply have to run `wails build` to regenerate your application.
+如果您对前端或后端进行更改，则只需运行 `wails build` 即可重新生成您的应用程序。
 
+## 先决条件
 
-## Prerequisites
+Wails使用 `cgo` 绑定到本机渲染引擎，因此需要大量依赖于平台的库以及 `Go` 的安装。基本要求是：
 
-Wails uses cgo to bind to the native rendering engines so a number of platform dependent libraries are needed as well as an installation of Go. The basic requirements are:
+* Go 1.12 以上
+* npm
 
-- Go 1.12 or above
-- npm
-
-Run `go version && npm --version` to verify.
+运行 `go version && npm --version` 进行验证。
 
 ### MacOS
 
-Make sure you have the xcode command line tools installed. This can be done by running:
+确保已安装 `xcode` 命令行工具。可以通过运行以下命令来完成：
 
-`xcode-select --install`
+ `xcode-select --install`
 
 ### Linux
 
 #### Debian/Ubuntu
 
-`sudo apt install libgtk-3-dev libwebkit2gtk-4.0-dev`
-
+ `sudo apt install libgtk-3-dev libwebkit2gtk-4.0-dev`
 _Debian: 8, 9, 10_
 
 _Ubuntu: 16.04, 18.04, 19.04_
 
-_Also succesfully tested on: Zorin 15, Parrot 4.7, Linuxmint 19, Elementary 5, Kali, Neon_
+_也可以通过以下测试: Zorin 15, Parrot 4.7, Linuxmint 19, Elementary 5, Kali, Neon_
 
 #### Arch Linux
 
-`sudo pacman -S webkit2gtk gtk3`
-
-_Also succesfully test on: ArcoLinuxB, Manjaro_
+ `sudo pacman -S webkit2gtk gtk3`
+_也成功测试了: ArcoLinuxB, Manjaro_
 
 #### Centos
 
-`sudo yum install webkitgtk3-devel gtk3-devel`
-
+ `sudo yum install webkitgtk3-devel gtk3-devel`
 _CentOS 6, 7_
 
 #### Fedora
 
-`sudo yum install webkit2gtk3-devel gtk3-devel`
-
+ `sudo yum install webkit2gtk3-devel gtk3-devel`
 _Fedora 29, 30_
 
 #### VoidLinux & VoidLinux-musl
 
-`xbps-install gtk+3-devel webkit2gtk-devel`
+ `xbps-install gtk+3-devel webkit2gtk-devel`
 
 #### Gentoo
 
-`sudo emerge gtk+:3 webkit-gtk`
-
+ `sudo emerge gtk+:3 webkit-gtk`
 ::: tip
-If you have successfully installed these dependencies on a different flavour of Linux, please consider clicking the "Edit this page" link at the bottom and submit a PR.
+如果您已成功在不同版本的 `Linux` 上安装了这些依赖项，请考虑单击底部的“帮助我们改善此页面”链接并提交PR。
 :::
 
 ### Windows
 
-Windows requires gcc and related tooling. The recommended download is from [http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download). Once this is installed, you are good to go.
+`Windows` 需要 `gcc` 和相关工具。推荐的下载是从[http://tdm-gcc.tdragon.net/download](http://tdm-gcc.tdragon.net/download)下载的。一旦安装完成，您就可以开始了。
 
+## 安装
 
+### 准备工作
 
-## Installation
+确保启用Go mod:
 
-### Preparation
+ `export GO111MODULE=on`
+并且 go/bin 存在你的环境变量:
 
-Ensure Go modules are enabled:
+ `echo $PATH | grep go/bin`
 
-`export GO111MODULE=on`
+### 安装
 
-and go/bin is in your PATH variable:
-
-`echo $PATH | grep go/bin`
-
-### Install
-
-Installation is as simple as running the following command:
+安装就像运行以下命令一样简单： 
 
 <pre style='color:white'>
 go get github.com/wailsapp/wails/cmd/wails
 </pre>
 
 ::: tip
-Once installed, the `wails update` command may be used for subsequent updates.
+一旦安装， `wails update` 命令可以用于后续更新。
 :::
 
-### Setup
+### 建立
 
-To finish the installation setup your Wails system by running the [setup command](./reference/#setup) `wails setup` and filling your handle and email.
+要完成安装设置，请通过运行[setup 命令](./reference/#setup) `wails setup` 并填充句柄和电子邮件来完成 `Wails` 系统的设置。
 
-## Generate a new project
+## 生成一个项目
 
-Generate a new project using the [init command](./reference/#init) `wails init`.
+[在命令行](./reference/#init) 运行 `wails init` 生成要一个新的项目
 
-Select the default options.
+选择默认选项。
 
-## Build it!
+## 构建
 
-Change into the project directory `cd my-project` and compile your application using the [build command](./reference/#build) `wails build`.
+运行 `cd my-project` 进入项目目录并且使用  [build 命令](./reference/#build) `wails build` 构架你的项目.
 
-If all went well, you should have a compiled program in your local directory. Run it with `./my-project` or double click `myproject.exe` if on windows.
-
+如果一切顺利，则应该在本地目录中有一个已编译的程序. 如果在 `windows` 上运行它请运行 `./my-project` 或者双击 `myproject.exe`
 <div class="imagecontainer">
 <img src="/media/app.png" style="width:65%">
 </div>
 
-### Serve
+### 服务
 
 #### `wails serve`
 
-While developing your apps using wails the preferred method is by the [serve command](./reference/#serve) `wails serve`.
+当使用 `wails` 开发应用程序时，[serve 命令](./reference/#serve) `wails serve` 是首选项 .
 
 ::: tip
-This produces a much **faster** lightweight build in _debug_ mode, excluding `npm` build scripts, saving time when developing the backend and also enabling use of `npm run serve` for partial browser development of frontend!
+这样可以在 _debug_ 模式下生成**更快**的轻量级构建，不包括 `npm` 构建脚本，节省了开发后端的时间，还允许使用 `npm run serve` 来进行前端的部分浏览器开发！
 :::
 
 #### `npm run serve`
 
-Change into the frontend directory `cd my-project/frontend` and serve your GUI using `npm run serve`.
+运行 `cd my-project/frontend` 切换到前端项目目录，并使用 `npm run serve` 预览你的前端界面 .
 
+## 下一步
 
-## Next Steps
-
-If you would like to start making an app right away, we suggest you explore Wails via our _awesome_ [tutorials](./tutorials/).
-If you would prefer to get to know the framework a little better before building anything, we suggest having a look through the
-[concepts](./home.html#concepts).
-Finally if you are advanced user and would like to get right in to it head over to the [API reference](./reference/#api) & [Cli reference](./reference/#cli) sections.
-
+如果你想立即开始只做应用, 我们建议你通过 _awesome_ [tutorials](./tutorials/)探索 Wails.
+如果您希望在构建任何东西之前对框架有所了解，我们建议您仔细阅读一下[概念](./home.html#concepts).
+最后，如果您是高阶用户，并且想直接使用它，请转到[API参考](./reference/#api) 和[Cli参考](./reference/#cli)部分。
 ::: tip
-Come by our [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) channel. 
+加入我们 [Slack](https://gophers.slack.com/messages/CJ4P9F7MZ) 的通道. 
 [_Invite_](https://invite.slack.golangbridge.org) 
-For support or just to say hi!
+为了支持还是打个招呼！
 :::
