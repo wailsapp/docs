@@ -1,5 +1,6 @@
 
 module.exports = {
+  base: '/',
   markdown: {
     lineNumbers: true
   },
@@ -39,6 +40,9 @@ module.exports = {
     locales: {
       '/': {
         label: 'English',
+        repoLabel: 'Source',
+        editLinkText: 'Edit this page on GitHub',
+        lastUpdated: 'Last Updated',
         nav: [
           { text: "Wails", link: "/home.html#wails" },
           { text: "Quick Start", link: "/quick_start" },
@@ -54,6 +58,9 @@ module.exports = {
       },
       '/zh/': {
         label: '简体中文',
+        repoLabel: '查看源码',
+        editLinkText: '帮助我们改善此页面！',
+        lastUpdated: '最后更新时间',
         nav: [
           { text: "Wails", link: "/zh/home.html#wails" },
           { text: "快速开始", link: "/zh/quick_start" },
