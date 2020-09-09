@@ -8,9 +8,9 @@
     "@vuepress/plugin-google-analytics": "^1.0.0-rc.1"
   },
   "scripts": {
-    "docs:build": "NODE_ENV=production ./node_modules/.bin/vuepress build",
+    "docs:build": "cross-env NODE_ENV=production ./node_modules/.bin/vuepress build",
     "docs:dev": "npx vuepress dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve:test": "serve .vuepress/dist/"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/wailsapp/docs#readme",
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.0.0-rc.1"
+    "@vuepress/plugin-google-analytics": "^1.0.0-rc.1",
+    "cross-env": "^7.0.2",
+    "serve": "^11.3.2"
   }
 }
