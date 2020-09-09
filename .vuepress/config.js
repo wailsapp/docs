@@ -1,7 +1,5 @@
 
 module.exports = {
-  title: "Wails",
-  description: "The lightweight framework for building web-like desktop apps using Go",
   markdown: {
     lineNumbers: true
   },
